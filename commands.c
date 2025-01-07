@@ -12,6 +12,7 @@
  * @input: Pointeur vers la chaîne d'entrée.
  * @len: Taille de l'entrée.
  */
+
 void read_command(char **input, size_t *len)
 {
 	ssize_t read = getline(input, len, stdin);
@@ -41,6 +42,7 @@ void read_command(char **input, size_t *len)
  * Return: Un pointeur vers le chemin complet de la commande si trouvée,
  * NULL sinon.
  */
+
 char *find_command(char *command)
 {
 	char *path_copy;
@@ -81,6 +83,7 @@ char *find_command(char *command)
  * execute_command - Exécuter la commande saisie.
  * @input: Commande à exécuter.
  */
+
 void execute_command(char *input)
 {
 	pid_t child_pid;
