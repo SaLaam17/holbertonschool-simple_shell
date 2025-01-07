@@ -100,7 +100,10 @@ int main(void)
 			break;
 		}
 	}
-/* Sortir de la boucle en mode non-interactif après l'exécution de la commande */
+/*
+ *Sortir de la boucle en mode non-interactif
+ *après l'exécution de la commande
+ */
 	free(input);
 	return (0);
 }
