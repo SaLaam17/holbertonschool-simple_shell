@@ -11,7 +11,6 @@ char *_getenv(const char *name);
 /*fonctions de commandes*/
 void read_command(char **input, size_t *len);
 char *find_command(char *command);
-void execute_command(char *input);
-
+void execute_command(char *input, const char *program_name);
 
 #endif

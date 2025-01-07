@@ -39,7 +39,7 @@ void read_command(char **input, size_t *len)
  * @input: Commande à exécuter.
  */
 
-void execute_command(char *input)
+void execute_command(char *input, const char *program_name)
 {
 	pid_t child_pid;
 	int status;
@@ -60,7 +60,7 @@ void execute_command(char *input)
 	{
 		if (execve(argv[0], argv, environ) == -1)
 		{
-			perror("execve");
+			fprintf(stderr, "%s: 1: %s: not found\n", program_name, input);
 			free(input);
 			exit(EXIT_FAILURE);
 		}
@@ -77,10 +77,12 @@ void execute_command(char *input)
  * Return: Toujours (0)
  */
 
-int main(void)
+int main(int argc, char **argv)
 {
 	char *input = NULL;
 	size_t len = 0;
+
+	(void)argc; /* Supprimer l'avertissement lié à argc non utilisé */
 
 	while (1)
 /*
@@ -93,7 +95,7 @@ int main(void)
 		printf("$ "); /* Afficher le prompt */
 
 	read_command(&input, &len);
-	execute_command(input);
+	execute_command(input, argv[0]);
 
 		if (!isatty(STDIN_FILENO))
 		{
