@@ -1,0 +1,46 @@
+man_1_simple_shell
+.Dt _printf(3)      \" Program name and manual section number
+.Os Darwin
+.Sh NAME                 \" Section Header - required - don't modify
+.Nm 
+_printf,
+.Nd function that produces output according to a format.
+.Sh SYNOPSIS             \" Section Header - required - don't modify
+
+int _printf(const char *format, ...)
+.br
+#include "main.h"
+.Sh DESCRIPTION          \" Section Header - required - don't modify
+_printf is a custom implementation of the standard printf function in C. 
+.br 
+ _printf reads the format string and replaces each specifier with the corresponding value provided in the arguments.
+
+
+.Pp                      \" Inserts a space
+% c: is a format specifier that will be replaced by a character
+.Pp
+%s: is a format specifier that will be replaced by a string.
+.Pp
+%%: is a format specifier that will be replaced by a percent sign
+.Pp
+%d: is a format specifier that will be replaced by a string an integer
+.Pp
+%i: is a format specifier that will be replaced by a string integer
+.Sh RETURN VALUE
+_printf returns the number of characters printed 
+.br 
+(excluding the null byte used to end output to strings)
+
+.Sh EXAMPLES
+_printf("Let's try to printf %s\n", "a simple sentence."); 
+.Pp
+will print to stdout the sentence: "Let's try to printf a simple sentence."
+.Pp 
+because %s is the format specifier
+that will be replaced by the string "a simple sentence." 
+passed as an argument to _printf.
+
+.Sh DATE
+07/01/25
+.Sh AUTHORS
+Saïd Laamri
