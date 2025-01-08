@@ -53,7 +53,6 @@ void execute_command(char *input, const char *program_name)
 	if (child_pid == -1)
 	{
 		perror("error fork");
-		free(input);
 		exit(EXIT_FAILURE);
 	}
 
@@ -62,7 +61,6 @@ void execute_command(char *input, const char *program_name)
 		if (execve(argv[0], argv, environ) == -1)
 		{
 			fprintf(stderr, "%s: 1: %s: not found\n", program_name, input);
-			free(input);
 			exit(EXIT_FAILURE);
 		}
 	}
