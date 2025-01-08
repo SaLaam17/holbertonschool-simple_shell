@@ -1,5 +1,5 @@
 man_1_simple_shell
-.Dt _printf(3)      \" Program name and manual section number
+.Dt simple_shell(3)      \" Program name and manual section number
 .Os Darwin
 .Sh NAME                 \" Section Header - required - don't modify
 .Nm 
