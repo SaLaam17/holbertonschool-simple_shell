@@ -25,11 +25,11 @@ void read_command(char **input, size_t *len)
 		}
 		else
 		{
-			perror("getline");
+			perror("error getline");
 			free(*input);
 			exit(EXIT_FAILURE);
 		}
-	}
+	}	
 	(*input)[strcspn(*input, "\n")] = '\0';
 /* Supprimer le caractère de nouvelle ligne */
 }
@@ -37,6 +37,7 @@ void read_command(char **input, size_t *len)
 /**
  * execute_command - Exécuter la commande saisie.
  * @input: Commande à exécuter.
+ * @program_name: Nom du programme (argv[0]) pour les messages d'erreur.
  */
 
 void execute_command(char *input, const char *program_name)
@@ -51,7 +52,7 @@ void execute_command(char *input, const char *program_name)
 	child_pid = fork();
 	if (child_pid == -1)
 	{
-		perror("fork");
+		perror("error fork");
 		free(input);
 		exit(EXIT_FAILURE);
 	}
