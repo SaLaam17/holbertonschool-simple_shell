@@ -9,7 +9,7 @@ Utilisez la ligne de commande suivante pour compiler tous les fichiers avec l'ex
 Ubuntu 20.04 LTS<br>
 Nos programmes répondent aux exigences de style Betty. Ils ont été vérifiés avec betty-style.pl et betty-doc.pl
 ## Exemples d'utilisation
-Modes interacif:
+Modes interacif:<br>
 MacBook-Pro-de-Laamri-10:holbertonschool-simple_shell laamrisaid$ ./Simple_shell_0.4 
 $ ls
 AUTHORS                 commands.c
@@ -17,7 +17,6 @@ Images_README           man_1_simple_shell
 README.md               shell.h
 Simple_shell_0.4        utils.c
 Simple_shell_0.4.c
-Command not found: /usr/sbin:/sbin:/opt/X11/bin:/Users/laamrisaid/holbertonschool-low_level_programming/testSaïd/Betty
 $ 
 et non-interactif:<br>
 MacBook-Pro-de-Laamri-10:holbertonschool-simple_shell laamrisaid$ echo -e "/bin/ls" | ./Simple_shell_0.4
