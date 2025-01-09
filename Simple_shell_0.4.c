@@ -27,6 +27,11 @@ int main(int argc, char **argv)
 			command = strtok(input, "\n");
 			while (command != NULL)
 			{
+				if (strcmp(command, "exit") == 0)
+				{
+					free(input);
+					exit(0);
+				}
 				execute_command(command, argv[0]);
 				command = strtok(NULL, "\n");
 			}
@@ -41,6 +46,11 @@ int main(int argc, char **argv)
 			command = strtok(input, "\n");
 			while (command != NULL)
 			{
+				if (strcmp(command, "exit") == 0)
+				{
+					free(input);
+					exit(0);
+				}
 				execute_command(command, argv[0]);
 				command = strtok(NULL, "\n");
 			}
