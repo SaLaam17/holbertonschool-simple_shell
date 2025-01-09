@@ -4,7 +4,7 @@
 Simple shell est un interpréteur de commandes UNIX simple
 ## Compilation
 Utilisez la ligne de commande suivante pour compiler tous les fichiers avec l'extension .c:<br>
-**gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o simple_shell_0.4.c**
+**gcc -Wall -Werror -Wextra -pedantic -std=gnu89 `*.c` -o simple_shell_0.4.c**
 ## Exigences (requirements)
 Ubuntu 20.04 LTS<br>
 Nos programmes répondent aux exigences de style Betty. Ils ont été vérifiés avec betty-style.pl et betty-doc.pl
