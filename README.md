@@ -10,21 +10,21 @@ Ubuntu 20.04 LTS<br>
 Nos programmes répondent aux exigences de style Betty. Ils ont été vérifiés avec betty-style.pl et betty-doc.pl
 ## Exemples d'utilisation
 **Modes interacif:**<br>
-MacBook-Pro-de-Laamri-10:holbertonschool-simple_shell laamrisaid$ ./Simple_shell_0.4 
-$ ls
-AUTHORS                 commands.c
-Images_README           man_1_simple_shell
-README.md               shell.h
-Simple_shell_0.4        utils.c
+MacBook-Pro-de-Laamri-10:holbertonschool-simple_shell laamrisaid$ ./Simple_shell_0.4<br>
+$ ls<br>
+AUTHORS                 commands.c<br>
+Images_README           man_1_simple_shell<br>
+README.md               shell.h<br>
+Simple_shell_0.4        utils.c<br>
 Simple_shell_0.4.c
 $<br>
 **et non-interactif:**<br>
-MacBook-Pro-de-Laamri-10:holbertonschool-simple_shell laamrisaid$ echo -e "/bin/ls" | ./Simple_shell_0.4
-AUTHORS                 commands.c
-Images_README           man_1_simple_shell
-README.md               shell.h
-Simple_shell_0.4        utils.c
-Simple_shell_0.4.c
+MacBook-Pro-de-Laamri-10:holbertonschool-simple_shell laamrisaid$ echo -e "/bin/ls" | ./Simple_shell_0.4<br>
+AUTHORS                 commands.c<br>
+Images_README           man_1_simple_shell<br>
+README.md               shell.h<br>
+Simple_shell_0.4        utils.c<br>
+Simple_shell_0.4.c<br>
 MacBook-Pro-de-Laamri-10:holbertonschool-simple_shell laamrisaid$
 ls; ls -la; pwd; cat; ...
 ## Tests
