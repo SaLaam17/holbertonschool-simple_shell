@@ -13,7 +13,9 @@
 
 void read_command(char **input, size_t *len)
 {
-	ssize_t read = getline(input, len, stdin);
+	ssize_t read;
+	*len =0;
+	read = getline(input, len, stdin);
 
 	if (read == -1)
 	{
@@ -29,9 +31,9 @@ void read_command(char **input, size_t *len)
 			free(*input);
 			exit(EXIT_FAILURE);
 		}
-	}	
+	}
 	(*input)[strcspn(*input, "\n")] = '\0';
-/* Supprimer le caractère de nouvelle ligne */
+	/* Supprimer le caractère de nouvelle ligne */
 }
 
 /**
@@ -79,32 +81,39 @@ void execute_command(char *input, const char *program_name)
 int main(int argc, char **argv)
 {
 	char *input = NULL;
+	char *command;
 	size_t len = 0;
 
 	(void)argc; /* Supprimer l'avertissement lié à argc non utilisé */
 
-	while (1)
-/*
- * la boucle continuera sans interruption,
- * sauf si une instruction
- * comme break ou exit est rencontrée.
- */
+	if (!isatty(STDIN_FILENO))
 	{
-		if (isatty(STDIN_FILENO))
-		printf("$ "); /* Afficher le prompt */
-
-	read_command(&input, &len);
-	execute_command(input, argv[0]);
-
-		if (!isatty(STDIN_FILENO))
+		while (getline(&input, &len, stdin) != -1)
 		{
-			break;
+			command = strtok(input, "\n");
+			while (command != NULL)
+			{
+				execute_command(command, argv[0]);
+				command = strtok(NULL, "\n"); /*Avancer vers la commande suivante*/
+			}
+		}
+	}	
+	else
+	{
+		while (1)
+		{
+			printf("$ "); /* Afficher le prompt */
+			read_command(&input, &len);
+			command = strtok(input, "\n");
+			while (command != NULL)
+			{
+				execute_command(command, argv[0]);
+				command = strtok(NULL, "\n");
+				/* Avancer vers la commande suivante */
+			}
 		}
 	}
-/*
- *Sortir de la boucle en mode non-interactif
- *après l'exécution de la commande
- */
+
 	free(input);
 	return (0);
 }
