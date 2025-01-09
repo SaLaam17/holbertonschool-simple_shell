@@ -12,15 +12,15 @@ est un interpréteur de commandes simple, capable d'exécuter des commandes en l
 
 .SH OPTIONS
 .TP
-.B \-c command
-Exécute la commande fournie et quitte.
+.B \-l
+Exécute la commande ls.
 .TP
 .B \-h
 Affiche l'aide et quitte.
 
 .SH COMMANDES
 .TP
-.B cd
+.B pwd
 Change le répertoire de travail actuel.
 .TP
 .B exit
@@ -44,19 +44,19 @@ Fichier de configuration pour le simple_shell.
 
 .SH EXAMPLES
 .TP
-.B simple_shell
+.B ./simple_shell_0.4
 Lance le shell interactif.
 .TP
-.B simple_shell -c "ls -l"
-Exécute la commande `ls -l` et quitte.
+.B simple_shell "ls -l"
+Exécute la commande `ls -l`.
 
 .SH SEE ALSO
 .BR sh (1),
 .BR bash (1)
 
 .SH BUGS
-Signalez les bogues à <votre_email@example.com>.
+Signalez les bogues à <said.laamri@holbertonstudents.com>.
 
 .SH AUTHORS
 .NH 1
-.votre_nom (votre_email@example.com)
+.Saïd Laamri (said.laamri@holbertonstudents.com)
