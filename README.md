@@ -26,5 +26,4 @@ Vérification des éventuelles fuites de mémoire avec l'utilisation de **leaks*
 4. Trouver l'ID du programme (simple_shell_0.4.c) en utilisant la commande ps. Ici **99995**
 5. Utiliser leaks avec le PID du programme.<br>
 commande leaks 99995<br>
-
 ![Capture d'écran 1](Leaks_simple_shell_0.4.png)
