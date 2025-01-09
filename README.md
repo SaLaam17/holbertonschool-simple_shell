@@ -23,6 +23,7 @@ Vérification des éventuelles fuites de mémoire avec l'utilisation de **leaks*
 **gcc -Wall -Werror -Wextra -pedantic -std=gnu89 simple_shell_0.4.c -o simple_shell_0.4**
 3. Exécuter le programme en arrière-plan en utilisant l'opérateur &:
 **./simple_shell_0.4 &**
-4. Trouver l'ID du programme (simple_shell_0.4.c) en utilisant la commande ps. Ici **99995**
+4. Trouver l'ID du programme (simple_shell_0.4.c) en utilisant la commande ps. Ici **2237**
 5. Utiliser leaks avec le PID du programme.<br>
-commande leaks 99995<br>
+commande leaks 2237<br>
+   ![Capture_ecran](Leaks.png)
