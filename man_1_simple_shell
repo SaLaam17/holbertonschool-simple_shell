@@ -1,63 +1,49 @@
-.SH NAME
+.TH SIMPLE_SHELL 1 "Jan 10, 2025" "Manuel Simple Shell"
+.SH NOM
 simple_shell \- un interpréteur de commandes simple
-
 .SH SYNOPSIS
 .B simple_shell
-.RI [ options ]
 .RI [ arguments ]
-
 .SH DESCRIPTION
 .B simple_shell
-est un interpréteur de commandes simple, capable d'exécuter des commandes en ligne de commande. Il offre plusieurs fonctionnalités de base pour la gestion des processus et des fichiers.
-
-.SH OPTIONS
-.TP
-.B \-l
-Exécute la commande ls.
-.TP
-.B \-h
-Affiche l'aide et quitte.
+est un interpréteur de commandes simple capable d'exécuter des commandes en ligne de commande. Il offre plusieurs fonctionnalités de base pour la gestion des processus et des fichiers.
 
 .SH COMMANDES
+.B simple_shell
+peut exécuter les commandes suivantes :
+.TP
+.B ls
+Affiche le contenu du répertoire courant.
+.TP
+.B cd 
+.IR [directory]
+Change le répertoire courant.
 .TP
 .B pwd
-Change le répertoire de travail actuel.
+Affiche le chemin du répertoire courant.
 .TP
 .B exit
 Quitte le shell.
 .TP
-.B help
-Affiche l'aide pour les commandes disponibles.
+.B echo 
+.IR [message]
+Affiche le message fourni.
 
-.SH ENVIRONMENT
+.SH EXEMPLES
 .TP
-.B PATH
-Variable d'environnement contenant les répertoires dans lesquels chercher les exécutables.
-.TP
-.B HOME
-Répertoire de base de l'utilisateur.
-
-.SH FILES
-.TP
-.B /etc/simple_shellrc
-Fichier de configuration pour le simple_shell.
-
-.SH EXAMPLES
-.TP
-.B ./simple_shell_0.4
+.B ./simple_shell
 Lance le shell interactif.
 .TP
-.B simple_shell "ls -l"
-Exécute la commande `ls -l`.
+.B ./simple_shell "ls -l"
+Exécute la commande 
+.B ls -l
 
-.SH SEE ALSO
-.BR sh (1),
-.BR bash (1)
+.SH VOIR AUSSI
+.B sh
+(1), 
+.B bash
+(1)
 
-.SH BUGS
-Signalez les bogues à <said.laamri@holbertonstudents.com> ou <djelloul.rouba@holbertonstudents.com>.
-
-.SH AUTHORS
-.NH 1
-.Saïd Laamri (said.laamri@holbertonstudents.com)
-.Djelloul Rouba (djelloul.rouba@holbertonstudents.com)
+.SH AUTEURS
+Saïd Laamri <laamrisaid@example.com>
+Djelloul Rouba <djelloul.rouba@holbertonstudents.com>
