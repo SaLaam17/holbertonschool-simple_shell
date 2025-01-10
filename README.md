@@ -27,3 +27,6 @@ Vérification des éventuelles fuites de mémoire avec l'utilisation de **leaks*
 5. Utiliser leaks avec le PID du programme.<br>
 commande leaks 2237<br>
    ![Capture_ecran](Leaks.png)
+
+![Flowchart_simple_shell drawio](https://github.com/user-attachments/assets/e90b2a35-c884-46f2-918b-50b08da245e3)
+
