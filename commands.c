@@ -48,11 +48,11 @@ char *find_command(char *command)
 	char *path_copy, *dir, full_path[1024];
 	char *path = _getenv("PATH");
 
-	if (path == NULL)
+	if (path == NULL || command == NULL)
 	{
 		return (NULL);
 	}
-/* Si command est un chemin absolu, on vérifie simplement son accès */
+
 	if (access(command, X_OK) == 0)
 	{
 		return (strdup(command));
@@ -95,12 +95,12 @@ void execute_command(char *input, const char *program_name)
 	(void)program_name;
 	splits_string(input, " ", argv);/*Découper l'entrée en commande et options*/
 	command_path = find_command(argv[0]);
-
 	if (command_path == NULL)
 	{
 		fprintf(stderr, "Command not found: %s\n", argv[0]);
 		return;
 	}
+
 	argv[0] = command_path;
 	child_pid = fork();
 	if (child_pid == -1)
